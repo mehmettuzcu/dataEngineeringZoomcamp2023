@@ -9,8 +9,8 @@ df.columns
 
 pd.io.sql.get_schema(df, name="yellow_taxi_data")
 
-tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
-tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
+lpep_pickup_datetime = pd.to_datetime(df.lpep_pickup_datetime)
+lpep_dropoff_datetime = pd.to_datetime(df.lpep_dropoff_datetime)
 
 pd.io.sql.get_schema(df, name="yellow_taxi_data")
 
@@ -25,20 +25,20 @@ engine.connect()
 
 # pass the engine variable to get_schema function
 # Pandas will execute the schema SQL statement using the engine connection we have defined
-pd.io.sql.get_schema(df, name="yellow_taxi_data", con=engine)
+pd.io.sql.get_schema(df, name="green_taxi_data", con=engine)
 
 # df_iter = pd.read_csv('week_1_basics_n_setup/2_docker_sql/yellow_tripdata_2020-01.csv', iterator=True, chunksize=100000)
-df_iter = pd.read_csv('week_1_basics_n_setup/2_docker_sql/yellow_tripdata_2021-01.csv.gz', compression='gzip', header=0, sep=',', error_bad_lines=False, iterator=True, chunksize=100000)
+df_iter = pd.read_csv('week_1_basics_n_setup/2_docker_sql/green_tripdata_2019-01.csv', iterator=True, chunksize=100000)
 df = next(df_iter)
 
-tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
-tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
+lpep_pickup_datetime = pd.to_datetime(df.lpep_pickup_datetime)
+lpep_dropoff_datetime = pd.to_datetime(df.lpep_dropoff_datetime)
 
 df.head(n=0)
 
-df.to_sql(name="yellow_taxi_trips", con=engine, if_exists="replace")
+df.to_sql(name="green_taxi_data", con=engine, if_exists="replace")
 
-df.to_sql(name="yellow_taxi_trips", con=engine, if_exists="append")
+df.to_sql(name="green_taxi_data", con=engine, if_exists="append")
 
 
 from time import time
@@ -51,20 +51,18 @@ while True:
 	df = next(df_iter)
 
 	# fixes timestamp type issue
-	df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
-	df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
+
+	lpep_pickup_datetime = pd.to_datetime(df.lpep_pickup_datetime)
+	lpep_dropoff_datetime = pd.to_datetime(df.lpep_dropoff_datetime)
 
 	# appends data to existing table
-	df.to_sql(name="yellow_taxi_data", con=engine, if_exists="append")
+	df.to_sql(name="green_taxi_data", con=engine, if_exists="append")
 
 	# benchmark time ends
 	t_end = time()
 
 	# prints the time it took to execute the code
 	print('Inserted another chunk... took %.3f second(s)' % (t_end - t_start))
-
-
-df = pd.read_csv('week_1_basics_n_setup/2_docker_sql/yellow_tripdata_2021-01.csv.gz', compression='gzip', header=0, sep=',', error_bad_lines=False)
 
 # this url contains taxi zone data
 # assume we have downloaded the file as "taxi+_zone_lookup.csv"

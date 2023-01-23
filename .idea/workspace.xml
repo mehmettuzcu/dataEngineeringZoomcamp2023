@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d93917d-9107-45e7-bc26-762e7d706d5d" name="Changes" comment="" />
+    <list default="true" id="0d93917d-9107-45e7-bc26-762e7d706d5d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week_1_basics_n_setup/2_docker_sql/notes" beforeDir="false" afterPath="$PROJECT_DIR$/week_1_basics_n_setup/2_docker_sql/notes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week_1_basics_n_setup/2_docker_sql/taxi+_zone_lookup.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week_1_basics_n_setup/2_docker_sql/upload-data.py" beforeDir="false" afterPath="$PROJECT_DIR$/week_1_basics_n_setup/2_docker_sql/upload-data.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
