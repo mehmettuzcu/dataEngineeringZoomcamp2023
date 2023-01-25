@@ -1,0 +1,4 @@
+week_2_data_ingestion/airflow/logs
+week_2_data_ingestion/airflow/plugins
+week_2_data_ingestion/airflow/.env
+.idea
