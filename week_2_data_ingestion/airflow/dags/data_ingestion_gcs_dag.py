@@ -1,5 +1,3 @@
-# data_ingestion_gcs_dag.py
-
 import os
 import logging
 
@@ -12,7 +10,7 @@ from airflow.operators.python import PythonOperator
 
 # We installed the following from the requirements file which was specified in the Dockerfile.
 
-# Helps to interact with Google Storage
+# Helps to interact with Google Storage
 from google.cloud import storage
 
 # Helps interact with BigQuery
