@@ -64,7 +64,7 @@ while True:
 	print('Inserted another chunk... took %.3f second(s)' % (t_end - t_start))
 
 
-df = pd.read_csv('week_1_basics_n_setup/2_docker_sql/yellow_tripdata_2021-01.csv.gz', compression='gzip', header=0, sep=',', error_bad_lines=False)
+df = pd.read_csv('week_1_basics_n_setup/2_docker_sql/yellow_tripdata_2021-01.', compression='gzip', header=0, sep=',', error_bad_lines=False)
 
 # this url contains taxi zone data
 # assume we have downloaded the file as "taxi+_zone_lookup.csv"

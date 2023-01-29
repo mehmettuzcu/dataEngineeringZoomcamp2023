@@ -1,6 +1,6 @@
 # First-time build can take upto 10 mins.
 
-FROM apache/airflow:2.2.3
+FROM apache/airflow:2.3.2
 
 ENV AIRFLOW_HOME=/opt/airflow
 
@@ -10,6 +10,7 @@ RUN apt-get update -qq && apt-get install vim -qqq
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir pandas sqlalchemy psycopg2-binary
 
 # Ref: https://airflow.apache.org/docs/docker-stack/recipes.html
 

@@ -1,4 +1,6 @@
-week_2_data_ingestion/airflow/logs
-week_2_data_ingestion/airflow/plugins
-week_2_data_ingestion/airflow/.env
 .idea
+week_2_data_ingestion/airflow/logs
+week_2_data_ingestion/airflow/.env
+week_2_data_ingestion/airflow/plugins
+week_2_data_ingestion/prefect/ny_taxi_data
+week_1_basics_n_setup/2_docker_sql/ny_taxi_data
