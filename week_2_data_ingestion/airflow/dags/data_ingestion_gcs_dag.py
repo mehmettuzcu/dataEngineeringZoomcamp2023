@@ -19,29 +19,30 @@ from airflow.providers.google.cloud.operators.bigquery import BigQueryCreateExte
 # Helps convert our data to parquet format
 import pyarrow.csv as pv
 import pyarrow.parquet as pq
+import pandas as pd
 
 # Set some local variables based on environmental varaibles we specified in docker-compose.yaml
-PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
-BUCKET = os.environ.get("GCP_GCS_BUCKET")
+PROJECT_ID = os.getenv('GCP_PROJECT_ID')
+BUCKET = os.getenv('GCP_GCS_BUCKET')
 
 # Specify our dataset
-dataset_file = "yellow_tripdata_2021-01.csv"
-dataset_url = f"https://s3.amazonaws.com/nyc-tlc/trip+data/{dataset_file}"
+dataset_file = "yellow_tripdata_2021-01.csv.gz"
+dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/{dataset_file}"
 
 # Store environmental variables (in your docker container) locally. The second argument of each `.get` is what it will default to if it's empty.
 path_to_local_home = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'trips_data_all')
 
 # Replace CSV with Parquet on our file
-parquet_file = dataset_file.replace('.csv', '.parquet')
+parquet_file = dataset_file.replace('.csv.gz', '.parquet')
 
 def format_to_parquet(src_file):
     """Takes our source file and converts it to parquet"""
-    if not src_file.endswith('.csv'):
+    if not src_file.endswith('.csv.gz'):
         logging.error("Can only accept source files in CSV format, for the moment")
         return
-    table = pv.read_csv(src_file)
-    pq.write_table(table, src_file.replace('.csv', '.parquet'))
+    table = pd.read_csv(src_file, compression='gzip', header=0, sep=',', error_bad_lines=False)
+    table.to_parquet(path_to_local_home+"/"+parquet_file)
 
 
 # NOTE: takes 20 mins, at an upload speed of 800kbps. Faster if your internet has a better upload speed
@@ -84,7 +85,7 @@ with DAG(
 
     download_dataset_task = BashOperator(
         task_id="download_dataset_task",
-        bash_command=f"curl -sS {dataset_url} > {path_to_local_home}/{dataset_file}"
+        bash_command=f"curl -sSL {dataset_url} > {path_to_local_home}/{dataset_file}"
     )
 
     format_to_parquet_task = PythonOperator(
