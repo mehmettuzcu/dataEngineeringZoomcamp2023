@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0d93917d-9107-45e7-bc26-762e7d706d5d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week_1_basics_n_setup/2_docker_sql/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/week_1_basics_n_setup/2_docker_sql/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week_2_data_ingestion/airflow/.env" beforeDir="false" afterPath="$PROJECT_DIR$/week_2_data_ingestion/airflow/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week_2_data_ingestion/airflow/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/week_2_data_ingestion/airflow/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week_2_data_ingestion/airflow/dags/data_ingestion_gcs_dag.py" beforeDir="false" afterPath="$PROJECT_DIR$/week_2_data_ingestion/airflow/dags/data_ingestion_gcs_dag.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week_2_data_ingestion/airflow/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/week_2_data_ingestion/airflow/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week_2_data_ingestion/airflow/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/week_2_data_ingestion/airflow/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
