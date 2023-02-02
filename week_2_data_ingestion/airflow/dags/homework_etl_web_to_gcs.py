@@ -26,12 +26,8 @@ PROJECT_ID = os.getenv('GCP_PROJECT_ID')
 BUCKET = os.getenv('GCP_GCS_BUCKET')
 
 # Specify our dataset
-dataset_file = "green_tripdata_2020-11.csv.gz"
-dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/{dataset_file}"
-
-
-## https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2020-10.csv.gz
-
+dataset_file = "yellow_tripdata_2020-11.csv.gz"
+dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/{dataset_file}"
 
 # Store environmental variables (in your docker container) locally. The second argument of each `.get` is what it will default to if it's empty.
 path_to_local_home = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
