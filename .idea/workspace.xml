@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d93917d-9107-45e7-bc26-762e7d706d5d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week_2_data_ingestion/airflow/dags/data_ingestion_gcs_dag.py" beforeDir="false" afterPath="$PROJECT_DIR$/week_2_data_ingestion/airflow/dags/data_ingestion_gcs_dag.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week_2_data_ingestion/airflow/dags/simple_dag.py" beforeDir="false" afterPath="$PROJECT_DIR$/week_2_data_ingestion/airflow/dags/web_to_gcs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week_2_data_ingestion/airflow/dags/web_to_gcs.py" beforeDir="false" afterPath="$PROJECT_DIR$/week_2_data_ingestion/airflow/dags/simple_dag.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week_3_data_warehouse/notes" beforeDir="false" afterPath="$PROJECT_DIR$/week_3_data_warehouse/notes" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
